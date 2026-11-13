@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+import { FAQ_ITEMS, REFERENCES_LIST } from '../../data/landingContent';
+import { RevealOnScroll } from '../ui/RevealOnScroll';
+
+export const ReferencesSection: React.FC = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  return (
+    <section
+      id="references"
+      aria-labelledby="references-heading"
+      className="relative w-full border-t border-white/[0.06] bg-[#0d0d10] py-20 lg:py-28 select-text overflow-hidden"
+    >
+      <div className="relative z-10 max-w-[1672px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-[68px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-7">
+            <RevealOnScroll>
+              <p className="text-xs sm:text-[13px] font-medium tracking-[0.28em] text-[#e6df35] uppercase mb-4">
+                FONTES & REFERÊNCIAS
+              </p>
+              <h2
+                id="references-heading"
+                className="font-editorial text-3xl sm:text-5xl xl:text-[50px] font-normal leading-[1.08] tracking-[-0.02em] text-[#f5f5f7] mb-4"
+              >
+                Base científica e{' '}
+                <span className="text-[#edea35]">dados oficiais</span>
+              </h2>
+              <p className="text-base sm:text-lg font-light leading-[1.5] text-[#bebec4] mb-10 max-w-2xl">
+                Publicações técnicas e órgãos reguladores consultados pela Equipe 4
+                para fundamentar os dados apresentados.
+              </p>
+            </RevealOnScroll>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {REFERENCES_LIST.map((reference, idx) => (
+                <RevealOnScroll
+                  key={idx}
+                  delayMs={idx * 90}
+                  className="rounded-[22px] bg-[#171719]/90 backdrop-blur-md border border-white/[0.08] hover:border-[#efe72f]/40 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-[#efe72f] bg-[#efe72f]/10 border border-[#efe72f]/25 px-2.5 py-0.5 rounded-full">
+                        {reference.category}
+                      </span>
+                      <span className="text-xs text-[#9d9da5] font-light">
+                        {reference.year}
+                      </span>
+                    </div>
+
+                    <p className="text-xs font-medium text-[#d4d4d8] mb-1">
+                      {reference.organization}
+                    </p>
+                    <h3 className="font-editorial text-xl font-medium text-white leading-snug mb-2.5">
+                      {reference.title}
+                    </h3>
+                    <p className="text-sm font-light leading-relaxed text-[#bebec4]">
+                      {reference.summary}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-white/[0.06]">
+                    <a
+                      href={reference.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#efe72f] hover:underline"
+                    >
+                      <span>Acessar fonte oficial</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
+          </div>
+
+          <RevealOnScroll
+            delayMs={180}
+            direction="right"
+            className="lg:col-span-5 flex flex-col justify-between"
+          >
+            <div className="rounded-[26px] bg-[#171719]/90 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+              <span className="text-xs font-medium tracking-[0.24em] text-[#e6df35] uppercase block mb-2">
+                DÚVIDAS FREQUENTES
+              </span>
+              <h3 className="font-editorial text-2xl sm:text-3xl font-normal text-white mb-6">
+                Perguntas essenciais sobre segurança nuclear
+              </h3>
+
+              <div className="divide-y divide-white/[0.08]">
+                {FAQ_ITEMS.map((faq, index) => {
+                  const isOpen = openFaqIndex === index;
+                  return (
+                    <div key={index} className="py-4 first:pt-0 last:pb-0">
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                        aria-expanded={isOpen}
+                        className="w-full flex items-start justify-between text-left gap-4 py-1 text-base sm:text-lg font-editorial font-medium text-[#f5f5f7] hover:text-[#efe72f] transition-colors cursor-pointer"
+                      >
+                        <span>{faq.question}</span>
+                        <ChevronDown
+                          className={`w-5 h-5 shrink-0 mt-1 transition-transform duration-200 ${
+                            isOpen ? 'rotate-180 text-[#efe72f]' : 'text-[#a9a9b0]'
+                          }`}
+                        />
+                      </button>
+                      {isOpen && (
+                        <p className="mt-3 text-sm font-light leading-relaxed text-[#bebec4] pr-4">
+                          {faq.answer}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </div>
+    </section>
+  );
+};
