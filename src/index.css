@@ -6,6 +6,12 @@
     --font-serif: 'Source Serif 4', 'Newsreader', Georgia, serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #3b3b45 #0b0b0d;
+  }
+
   body {
     font-family: var(--font-sans);
     background-color: #0b0b0d;
@@ -13,6 +19,28 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+  }
+
+  /* Refined, discreet dark scrollbar that matches the site seamlessly without bright jarring yellow bars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #232328;
+    border-radius: 9999px;
+    border: 2px solid #09090b;
+    transition: background-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #efe72f;
   }
 }
 
@@ -22,4 +50,39 @@
 
 .hero-stage {
   container-type: inline-size;
+}
+
+/* Atomic Shockwave & Particle Explosion Keyframes */
+@keyframes nuclearShockwave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 231, 47, 0.45);
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow: 0 0 50px 15px rgba(239, 231, 47, 0.2);
+    opacity: 0.6;
+  }
+  100% {
+    box-shadow: 0 0 90px 30px rgba(239, 231, 47, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes particleBurst {
+  0% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-nuclear-shockwave {
+  animation: nuclearShockwave 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-particle-burst {
+  animation: particleBurst 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

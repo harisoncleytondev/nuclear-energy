@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import { HOW_IT_WORKS_STEPS } from '../../data/landingContent';
 import { RevealOnScroll } from '../ui/RevealOnScroll';
 
@@ -17,8 +18,8 @@ export const HowItWorksSection: React.FC = () => {
         className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-[radial-gradient(circle,rgba(239,231,47,0.05)_0%,transparent_70%)] blur-3xl pointer-events-none"
       />
 
-      <div className="relative z-10 max-w-[1672px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-[68px]">
-        <RevealOnScroll className="max-w-3xl mb-14 lg:mb-20">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <RevealOnScroll className="max-w-4xl mb-12 lg:mb-16">
           <p className="text-xs sm:text-[13px] font-medium tracking-[0.28em] text-[#e6df35] uppercase mb-4">
             COMO FUNCIONA
           </p>
@@ -26,10 +27,10 @@ export const HowItWorksSection: React.FC = () => {
             id="how-it-works-heading"
             className="font-editorial text-3xl sm:text-5xl xl:text-[56px] font-normal leading-[1.08] tracking-[-0.02em] text-[#f5f5f7]"
           >
-            Do interior do átomo à{' '}
+            Do interior da estrutura à{' '}
             <span className="text-[#edea35]">rede elétrica</span>
           </h2>
-          <p className="mt-5 text-base sm:text-lg xl:text-[19px] font-light leading-[1.5] text-[#bebec4] max-w-2xl">
+          <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4] max-w-3xl">
             Entenda as três etapas fundamentais que transformam a divisão de um
             núcleo invisível de urânio em eletricidade contínua e livre de carbono.
           </p>
@@ -100,9 +101,8 @@ export const HowItWorksSection: React.FC = () => {
                   {currentStep.title}
                 </h3>
               </div>
-
-              <div className="rounded-2xl bg-[#111113] border border-[#efe72f]/30 px-5 py-3 text-right">
-                <span className="block text-xs font-light text-[#a9a9b0] uppercase tracking-wider">
+              <div className="text-right">
+                <span className="text-xs uppercase tracking-[0.2em] text-[#9d9da5] block">
                   {currentStep.metricLabel}
                 </span>
                 <span className="font-editorial text-2xl sm:text-3xl font-medium text-[#efe72f]">
@@ -111,185 +111,151 @@ export const HowItWorksSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="my-8 py-6 px-4 rounded-2xl bg-[#111113]/90 border border-white/[0.05] flex items-center justify-center min-h-[220px]">
+            <div className="py-8 my-auto flex items-center justify-center">
               {activeStepIndex === 0 && (
                 <svg
-                  viewBox="0 0 600 190"
-                  className="w-full max-w-[540px] h-auto select-none"
-                  aria-label="Diagrama da fissão nuclear do Urânio-235"
+                  viewBox="0 0 600 200"
+                  className="w-full max-w-[520px] h-auto select-none"
+                  aria-label="Diagrama da fissão nuclear do Urânio 235"
                 >
-                  <circle cx="55" cy="95" r="9" fill="#efe72f" />
-                  <text x="55" y="125" textAnchor="middle" fill="#bebec4" fontSize="12">
-                    Nêutron livre
-                  </text>
+                  <circle cx="50" cy="100" r="9" fill="#efe72f" />
                   <path
-                    d="M72 95H158"
+                    d="M62 100H140"
                     stroke="#efe72f"
                     strokeWidth="2"
-                    strokeDasharray="5 5"
-                  />
-                  <polygon points="158,90 168,95 158,100" fill="#efe72f" />
-
-                  <circle
-                    cx="225"
-                    cy="95"
-                    r="42"
-                    fill="#1e1e18"
-                    stroke="#efe72f"
-                    strokeWidth="2.5"
-                  />
-                  <circle
-                    cx="225"
-                    cy="95"
-                    r="52"
-                    fill="none"
-                    stroke="#efe72f"
-                    strokeOpacity="0.25"
-                    strokeWidth="1.5"
-                  />
-                  <text
-                    x="225"
-                    y="92"
-                    textAnchor="middle"
-                    fill="#f5f5f7"
-                    fontSize="15"
-                    fontWeight="600"
-                  >
-                    U-235
-                  </text>
-                  <text x="225" y="110" textAnchor="middle" fill="#efe72f" fontSize="11">
-                    Núcleo pesado
-                  </text>
-
-                  <path d="M275 80L385 45" stroke="#efe72f" strokeWidth="2.2" />
-                  <path d="M275 110L385 145" stroke="#efe72f" strokeWidth="2.2" />
-                  <path
-                    d="M282 95H485"
-                    stroke="#efe72f"
-                    strokeWidth="1.8"
                     strokeDasharray="4 4"
                   />
-
-                  <circle
-                    cx="415"
-                    cy="42"
-                    r="24"
-                    fill="#1b1b17"
-                    stroke="#efe72f"
-                    strokeWidth="2"
-                  />
-                  <text x="415" y="46" textAnchor="middle" fill="#f5f5f7" fontSize="12">
-                    Kr-92
+                  <polygon points="144,100 134,95 134,105" fill="#efe72f" />
+                  <text x="50" y="130" textAnchor="middle" fill="#c4c4ca" fontSize="12">
+                    Nêutron incidente
                   </text>
 
                   <circle
-                    cx="415"
-                    cy="148"
-                    r="24"
-                    fill="#1b1b17"
+                    cx="200"
+                    cy="100"
+                    r="40"
+                    fill="#1e1e17"
                     stroke="#efe72f"
                     strokeWidth="2"
                   />
-                  <text x="415" y="152" textAnchor="middle" fill="#f5f5f7" fontSize="12">
-                    Ba-141
-                  </text>
-
-                  <rect x="475" y="73" width="105" height="44" rx="12" fill="#efe72f" />
                   <text
-                    x="527"
-                    y="93"
+                    x="200"
+                    y="105"
                     textAnchor="middle"
-                    fill="#111111"
-                    fontSize="12"
+                    fill="#efe72f"
+                    fontSize="13"
                     fontWeight="600"
                   >
-                    + CALOR
+                    ²³⁵U
                   </text>
-                  <text x="527" y="108" textAnchor="middle" fill="#111111" fontSize="11">
-                    + 3 Nêutrons
+
+                  <path d="M242 90L340 50" stroke="#efe72f" strokeWidth="2" />
+                  <path d="M242 110L340 150" stroke="#efe72f" strokeWidth="2" />
+
+                  <circle
+                    cx="365"
+                    cy="45"
+                    r="24"
+                    fill="#151517"
+                    stroke="#ffffff"
+                    strokeWidth="1.5"
+                  />
+                  <text x="365" y="49" textAnchor="middle" fill="#f5f5f7" fontSize="11">
+                    Bário-141
+                  </text>
+
+                  <circle
+                    cx="365"
+                    cy="155"
+                    r="22"
+                    fill="#151517"
+                    stroke="#ffffff"
+                    strokeWidth="1.5"
+                  />
+                  <text x="365" y="159" textAnchor="middle" fill="#f5f5f7" fontSize="11">
+                    Criptônio-92
+                  </text>
+
+                  <circle cx="460" cy="75" r="7" fill="#efe72f" />
+                  <circle cx="475" cy="100" r="7" fill="#efe72f" />
+                  <circle cx="460" cy="125" r="7" fill="#efe72f" />
+                  <text x="525" y="104" textAnchor="middle" fill="#efe72f" fontSize="12">
+                    + 2 a 3 nêutrons
                   </text>
                 </svg>
               )}
 
               {activeStepIndex === 1 && (
                 <svg
-                  viewBox="0 0 600 190"
+                  viewBox="0 0 600 200"
                   className="w-full max-w-[540px] h-auto select-none"
-                  aria-label="Diagrama dos circuitos primário e secundário do reator"
+                  aria-label="Diagrama dos circuitos primário e secundário de vapor"
                 >
                   <rect
-                    x="45"
-                    y="30"
-                    width="130"
-                    height="130"
-                    rx="22"
+                    x="50"
+                    y="40"
+                    width="110"
+                    height="120"
+                    rx="16"
                     fill="#1a1a16"
                     stroke="#efe72f"
-                    strokeWidth="2.5"
+                    strokeWidth="2"
                   />
                   <text
-                    x="110"
-                    y="88"
+                    x="105"
+                    y="95"
                     textAnchor="middle"
                     fill="#f5f5f7"
-                    fontSize="14"
+                    fontSize="13"
                     fontWeight="600"
                   >
-                    Vaso do Reator
+                    Reator
                   </text>
-                  <text x="110" y="108" textAnchor="middle" fill="#efe72f" fontSize="12">
+                  <text x="105" y="115" textAnchor="middle" fill="#efe72f" fontSize="11">
                     Circuito Primário
                   </text>
-                  <text x="110" y="128" textAnchor="middle" fill="#a9a9b0" fontSize="11">
-                    Água pressurizada
-                  </text>
 
-                  <path d="M175 72H250" stroke="#efe72f" strokeWidth="3" />
                   <path
-                    d="M250 118H175"
+                    d="M160 70H250V130H160"
+                    fill="none"
                     stroke="#efe72f"
-                    strokeOpacity="0.45"
                     strokeWidth="3"
                   />
 
                   <rect
                     x="250"
                     y="30"
-                    width="140"
-                    height="130"
-                    rx="22"
+                    width="120"
+                    height="140"
+                    rx="20"
                     fill="#171719"
-                    stroke="#efe72f"
-                    strokeOpacity="0.7"
+                    stroke="#48cae4"
                     strokeWidth="2"
                   />
                   <text
-                    x="320"
-                    y="88"
+                    x="310"
+                    y="95"
                     textAnchor="middle"
                     fill="#f5f5f7"
-                    fontSize="14"
+                    fontSize="13"
                     fontWeight="600"
                   >
-                    Gerador de Vapor
+                    Gerador
                   </text>
-                  <text x="320" y="108" textAnchor="middle" fill="#efe72f" fontSize="12">
-                    Troca Térmica
-                  </text>
-                  <text x="320" y="128" textAnchor="middle" fill="#a9a9b0" fontSize="11">
-                    Sem contato radioativo
+                  <text x="310" y="115" textAnchor="middle" fill="#48cae4" fontSize="11">
+                    de Vapor
                   </text>
 
                   <path
-                    d="M390 95H455"
-                    stroke="#efe72f"
-                    strokeWidth="2.5"
-                    strokeDasharray="6 4"
+                    d="M370 70H450"
+                    stroke="#ffffff"
+                    strokeWidth="3"
+                    strokeDasharray="6 3"
                   />
-                  <rect x="455" y="55" width="110" height="80" rx="16" fill="#efe72f" />
+                  <rect x="450" y="50" width="120" height="80" rx="14" fill="#efe72f" />
                   <text
                     x="510"
-                    y="92"
+                    y="90"
                     textAnchor="middle"
                     fill="#111111"
                     fontSize="13"
@@ -367,17 +333,34 @@ export const HowItWorksSection: React.FC = () => {
               )}
             </div>
 
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {currentStep.details.map((detail, i) => (
-                <li
-                  key={i}
-                  className="rounded-xl bg-[#121214] border border-white/[0.06] p-4 flex items-start gap-3 text-sm font-light text-[#c8c8ce]"
+            <div className="space-y-4">
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {currentStep.details.map((detail, i) => (
+                  <li
+                    key={i}
+                    className="rounded-xl bg-[#121214] border border-white/[0.06] p-4 flex items-start gap-3 text-sm font-light text-[#c8c8ce]"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-[#efe72f] shrink-0 mt-1.5" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs">
+                <span className="text-[#9d9da5] font-light">
+                  Fonte técnica da etapa:
+                </span>
+                <a
+                  href={currentStep.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 font-medium text-[#efe72f] hover:underline"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#efe72f] shrink-0 mt-1.5" />
-                  <span>{detail}</span>
-                </li>
-              ))}
-            </ul>
+                  <span>{currentStep.sourceLabel}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
           </RevealOnScroll>
         </div>
       </div>

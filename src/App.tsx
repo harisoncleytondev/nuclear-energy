@@ -4,6 +4,7 @@ import { HeroSection } from './components/sections/HeroSection';
 import { HowItWorksSection } from './components/sections/HowItWorksSection';
 import { DebateSection } from './components/sections/DebateSection';
 import { CuriositiesSection } from './components/sections/CuriositiesSection';
+import { MediaRecommendationsSection } from './components/sections/MediaRecommendationsSection';
 import { ReferencesSection } from './components/sections/ReferencesSection';
 import { Footer } from './components/layout/Footer';
 
@@ -15,6 +16,7 @@ export const App: React.FC = () => {
       <HowItWorksSection />
       <DebateSection />
       <CuriositiesSection />
+      <MediaRecommendationsSection />
       <ReferencesSection />
       <Footer />
     </div>

@@ -12,8 +12,8 @@ export const ReferencesSection: React.FC = () => {
       aria-labelledby="references-heading"
       className="relative w-full border-t border-white/[0.06] bg-[#0d0d10] py-20 lg:py-28 select-text overflow-hidden"
     >
-      <div className="relative z-10 max-w-[1672px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-[68px]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14">
           <div className="lg:col-span-7">
             <RevealOnScroll>
               <p className="text-xs sm:text-[13px] font-medium tracking-[0.28em] text-[#e6df35] uppercase mb-4">
@@ -26,9 +26,9 @@ export const ReferencesSection: React.FC = () => {
                 Base científica e{' '}
                 <span className="text-[#edea35]">dados oficiais</span>
               </h2>
-              <p className="text-base sm:text-lg font-light leading-[1.5] text-[#bebec4] mb-10 max-w-2xl">
-                Publicações técnicas e órgãos reguladores consultados pela Equipe 4
-                para fundamentar os dados apresentados.
+              <p className="text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4] mb-10 max-w-3xl">
+                Relatórios técnicos, acordos internacionais e órgãos reguladores consultados
+                pela equipe para fundamentar cada estatística e afirmação apresentada nesta pesquisa.
               </p>
             </RevealOnScroll>
 
@@ -83,10 +83,10 @@ export const ReferencesSection: React.FC = () => {
           >
             <div className="rounded-[26px] bg-[#171719]/90 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
               <span className="text-xs font-medium tracking-[0.24em] text-[#e6df35] uppercase block mb-2">
-                DÚVIDAS FREQUENTES
+                DÚVIDAS FREQUENTES & VERIFICAÇÃO
               </span>
               <h3 className="font-editorial text-2xl sm:text-3xl font-normal text-white mb-6">
-                Perguntas essenciais sobre segurança nuclear
+                Perguntas essenciais sobre tecnologia e segurança nuclear
               </h3>
 
               <div className="divide-y divide-white/[0.08]">
@@ -98,19 +98,36 @@ export const ReferencesSection: React.FC = () => {
                         type="button"
                         onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                         aria-expanded={isOpen}
-                        className="w-full flex items-start justify-between text-left gap-4 py-1 text-base sm:text-lg font-editorial font-medium text-[#f5f5f7] hover:text-[#efe72f] transition-colors cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 text-left group cursor-pointer"
                       >
-                        <span>{faq.question}</span>
+                        <span className="text-base font-normal text-[#f5f5f7] group-hover:text-[#efe72f] transition-colors">
+                          {faq.question}
+                        </span>
                         <ChevronDown
-                          className={`w-5 h-5 shrink-0 mt-1 transition-transform duration-200 ${
-                            isOpen ? 'rotate-180 text-[#efe72f]' : 'text-[#a9a9b0]'
+                          className={`w-5 h-5 text-[#a9a9b0] transition-transform duration-300 shrink-0 ${
+                            isOpen ? 'rotate-180 text-[#efe72f]' : ''
                           }`}
                         />
                       </button>
+
                       {isOpen && (
-                        <p className="mt-3 text-sm font-light leading-relaxed text-[#bebec4] pr-4">
-                          {faq.answer}
-                        </p>
+                        <div className="mt-3 pr-4">
+                          <p className="text-sm font-light text-[#bebec4] leading-relaxed">
+                            {faq.answer}
+                          </p>
+                          <div className="mt-3 pt-2.5 border-t border-white/[0.06] flex items-center justify-between text-xs">
+                            <span className="text-[#8a8a93] font-light">Fonte de verificação:</span>
+                            <a
+                              href={faq.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1 font-medium text-[#efe72f] hover:underline"
+                            >
+                              <span>{faq.sourceLabel}</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          </div>
+                        </div>
                       )}
                     </div>
                   );

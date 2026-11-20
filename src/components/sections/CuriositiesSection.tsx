@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import { CURIOSITIES_ITEMS } from '../../data/landingContent';
 import { RevealOnScroll } from '../ui/RevealOnScroll';
 
@@ -16,8 +17,8 @@ export const CuriositiesSection: React.FC = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[640px] h-[360px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(239,231,47,0.06)_0%,transparent_72%)] blur-3xl pointer-events-none"
       />
 
-      <div className="relative z-10 max-w-[1672px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-[68px]">
-        <RevealOnScroll className="max-w-3xl mb-14 lg:mb-18">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <RevealOnScroll className="max-w-4xl mb-12 lg:mb-16">
           <p className="text-xs sm:text-[13px] font-medium tracking-[0.28em] text-[#e6df35] uppercase mb-4">
             CURIOSIDADES & FATOS
           </p>
@@ -26,11 +27,11 @@ export const CuriositiesSection: React.FC = () => {
             className="font-editorial text-3xl sm:text-5xl xl:text-[56px] font-normal leading-[1.08] tracking-[-0.02em] text-[#f5f5f7]"
           >
             O que poucos sabem sobre a{' '}
-            <span className="text-[#edea35]">energia do átomo</span>
+            <span className="text-[#edea35]">energia nuclear</span>
           </h2>
-          <p className="mt-5 text-base sm:text-lg xl:text-[19px] font-light leading-[1.5] text-[#bebec4]">
-            Fatos científicos, comparações de escala e a presença da tecnologia
-            nuclear no Brasil e no cotidiano.
+          <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4]">
+            Fatos científicos verificados, comparações de escala e a presença da tecnologia
+            nuclear no Brasil e no cotidiano com referências para consulta.
           </p>
         </RevealOnScroll>
 
@@ -50,9 +51,17 @@ export const CuriositiesSection: React.FC = () => {
                 className={`${colSpanClass} rounded-[26px] bg-[#171719]/90 backdrop-blur-md border border-white/[0.08] hover:border-white/[0.16] p-7 sm:p-9 xl:p-10 flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-colors duration-300`}
               >
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-[0.24em] text-[#e6df35] uppercase mb-4">
-                    {item.eyebrow}
-                  </span>
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <span className="inline-block text-xs font-medium tracking-[0.24em] text-[#e6df35] uppercase">
+                      {item.eyebrow}
+                    </span>
+                    {item.bigStat && (
+                      <span className="font-editorial text-2xl font-medium text-[#efe72f]">
+                        {item.bigStat}
+                      </span>
+                    )}
+                  </div>
+
                   <h3 className="font-editorial text-2xl sm:text-3xl xl:text-[34px] font-normal leading-[1.15] text-[#f5f5f7] mb-4">
                     {item.title}{' '}
                     <span className="text-[#edea35]">{item.highlightWord}</span>
@@ -111,23 +120,25 @@ export const CuriositiesSection: React.FC = () => {
                           {pelletCount * 3} barris
                         </span>
                         <span className="text-xs font-light text-[#a9a9b0]">
-                          de Petróleo (~{pelletCount * 477} L)
+                          de Petróleo Bruto
                         </span>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {item.bigStat && item.id !== 'pellet' && (
-                  <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-baseline justify-between gap-4">
-                    <span className="font-editorial text-3xl sm:text-4xl font-medium text-[#efe72f]">
-                      {item.bigStat}
-                    </span>
-                    <span className="text-xs font-light text-[#a9a9b0] text-right">
-                      {item.bigStatUnit}
-                    </span>
-                  </div>
-                )}
+                <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+                  <span className="text-[#9d9da5] font-light">Fonte oficial:</span>
+                  <a
+                    href={item.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 font-medium text-[#efe72f] hover:underline"
+                  >
+                    <span>{item.sourceLabel}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </RevealOnScroll>
             );
           })}

@@ -9,8 +9,9 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Entenda', href: '#understand', sectionIds: ['understand', 'how-it-works'] },
-  { label: 'Debate', href: '#debate', sectionIds: ['debate'] },
+  { label: 'Discussão', href: '#debate', sectionIds: ['debate'] },
   { label: 'Curiosidades', href: '#curiosities', sectionIds: ['curiosities'] },
+  { label: 'Indicações', href: '#media', sectionIds: ['media'] },
   { label: 'Referências', href: '#references', sectionIds: ['references'] },
 ];
 
@@ -103,7 +104,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#0b0b0d]/85 backdrop-blur-md">
-      <div className="max-w-[1672px] mx-auto h-20 sm:h-24 xl:h-[128px] px-5 sm:px-8 lg:px-12 xl:px-[64px] flex items-center justify-between">
+      <div className="w-full h-20 sm:h-24 xl:h-[110px] px-4 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#understand"
@@ -111,15 +112,15 @@ export const Navbar: React.FC = () => {
           className="flex items-center gap-4 sm:gap-6 xl:gap-8 group focus-visible:outline-none"
         >
           <AtomLogoIcon className="w-10 h-11 sm:w-12 sm:h-13 xl:w-[58px] xl:h-[62px] shrink-0 transition-transform duration-300 group-hover:scale-105" />
-          <span className="text-sm sm:text-base xl:text-[18px] font-normal tracking-[0.44em] text-[#e6e6e9] uppercase">
-            ÁTOMO
+          <span className="text-base sm:text-lg xl:text-[20px] font-medium tracking-[0.32em] text-[#e6e6e9] uppercase">
+            NUCLEAR
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
         <nav
           aria-label="Navegação principal"
-          className="hidden md:flex items-center gap-7 lg:gap-11 xl:gap-[60px]"
+          className="hidden md:flex items-center gap-6 lg:gap-9 xl:gap-[48px]"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.label;
@@ -128,7 +129,7 @@ export const Navbar: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setActiveTab(item.label)}
-                className={`relative py-2.5 text-sm lg:text-base xl:text-[17.5px] font-light tracking-[0.01em] transition-colors ${
+                className={`relative py-2.5 text-sm lg:text-base xl:text-[17px] font-light tracking-[0.01em] transition-colors ${
                   isActive
                     ? 'text-[#f5f5f7] font-normal'
                     : 'text-[#a9a9b0] hover:text-white'
@@ -147,10 +148,10 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center">
           <a
             href="#team"
-            className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[#8e882b] bg-[#141412]/70 hover:bg-[#efe72f]/10 hover:border-[#efe72f] px-5 py-2.5 xl:w-[162px] xl:h-[50px] xl:px-0 xl:py-0 text-sm xl:text-[16.5px] font-normal text-[#efe72f] transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[#8e882b] bg-[#141412]/70 hover:bg-[#efe72f]/10 hover:border-[#efe72f] px-5 py-2.5 xl:w-[174px] xl:h-[50px] text-sm xl:text-[15.5px] font-normal text-[#efe72f] transition-all duration-200 cursor-pointer"
           >
-            <TeamGroupIcon className="w-5 h-4 xl:w-[25px] xl:h-[18px] shrink-0" />
-            <span>Equipe 4</span>
+            <TeamGroupIcon className="w-5 h-4 xl:w-[22px] xl:h-[16px] shrink-0" />
+            <span>Equipe (8)</span>
           </a>
         </div>
 
@@ -192,7 +193,7 @@ export const Navbar: React.FC = () => {
             className="mt-2 inline-flex items-center justify-center gap-2.5 rounded-full border border-[#8e882b] bg-[#141412] px-5 py-2.5 text-sm text-[#efe72f] w-fit"
           >
             <TeamGroupIcon className="w-5 h-4" />
-            <span>Equipe 4</span>
+            <span>Equipe de Pesquisa</span>
           </a>
         </div>
       )}
