@@ -19,9 +19,8 @@ export const Footer: React.FC = () => {
               </span>
             </a>
             <p className="text-sm font-light text-[#a9a9b0] leading-relaxed">
-              Trabalho Acadêmico de Pesquisa Científica sobre Energia Nuclear —
-              analisando fundamentos físicos, vantagens operacionais, riscos de segurança,
-              polêmicas globais, curiosidades e indicações culturais com referências oficiais.
+              Pesquisa acadêmica sobre a matriz energética nuclear: física da fissão,
+              capacidade de geração, emissões de carbono, segurança de reatores e gestão de rejeitos.
             </p>
           </div>
 

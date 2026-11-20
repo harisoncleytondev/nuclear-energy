@@ -51,8 +51,8 @@ export const MediaRecommendationsSection: React.FC = () => {
               <span className="text-[#edea35]">filmes e documentários</span>
             </h2>
             <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4]">
-              Obras essenciais para compreender a história, a física, as tragédias e
-              o futuro da energia nuclear sob múltiplas perspectivas científicas e humanas.
+              Livros, filmes e documentários que abordam o histórico científico do átomo,
+              os desastres de Chernobyl e as discussões recentes sobre descarbonização.
             </p>
           </div>
 

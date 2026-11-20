@@ -53,8 +53,8 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="mt-6 sm:mt-8 text-base sm:text-xl xl:text-[23px] font-light leading-[1.45] text-[#c8c8ce] max-w-2xl"
             >
-              Uma fonte de energia que divide opiniões mundiais —
-              <br className="hidden sm:inline" /> analisada com rigor científico, dados operacionais e fontes oficiais transparentes.
+              Uma análise sobre capacidade de geração, emissões de carbono,
+              segurança operacional e os desafios da gestão de rejeitos.
             </motion.p>
 
             {/* Subtle Horizontal Accent Line */}

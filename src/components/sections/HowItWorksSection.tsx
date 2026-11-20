@@ -27,12 +27,12 @@ export const HowItWorksSection: React.FC = () => {
             id="how-it-works-heading"
             className="font-editorial text-3xl sm:text-5xl xl:text-[56px] font-normal leading-[1.08] tracking-[-0.02em] text-[#f5f5f7]"
           >
-            Do interior da estrutura à{' '}
-            <span className="text-[#edea35]">rede elétrica</span>
+            Da quebra do núcleo à{' '}
+            <span className="text-[#edea35]">rede de transmissão</span>
           </h2>
           <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4] max-w-3xl">
-            Entenda as três etapas fundamentais que transformam a divisão de um
-            núcleo invisível de urânio em eletricidade contínua e livre de carbono.
+            Como o calor gerado pela fissão do urânio é transferido entre circuitos
+            isolados até movimentar os geradores elétricos.
           </p>
         </RevealOnScroll>
 

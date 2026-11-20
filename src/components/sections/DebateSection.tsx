@@ -39,8 +39,8 @@ export const DebateSection: React.FC = () => {
               <span className="text-[#edea35]">polêmicas</span>
             </h2>
             <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4]">
-              Uma análise aprofundada dos argumentos favoráveis, das preocupações reais de segurança
-              e dos grandes embates geopolíticos e ecológicos do setor atômico.
+              Pontos centrais da discussão técnica e política sobre a matriz nuclear,
+              baseados em inventários de emissão, histórico operacional e custos de implantação.
             </p>
           </div>
 

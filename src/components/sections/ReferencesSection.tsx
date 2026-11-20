@@ -27,8 +27,8 @@ export const ReferencesSection: React.FC = () => {
                 <span className="text-[#edea35]">dados oficiais</span>
               </h2>
               <p className="text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4] mb-10 max-w-3xl">
-                Relatórios técnicos, acordos internacionais e órgãos reguladores consultados
-                pela equipe para fundamentar cada estatística e afirmação apresentada nesta pesquisa.
+                Relatórios técnicos de agências de energia, estudos de inventário de emissões
+                e órgãos reguladores consultados para a compilação dos dados.
               </p>
             </RevealOnScroll>
 

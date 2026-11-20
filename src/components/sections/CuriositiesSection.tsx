@@ -26,12 +26,12 @@ export const CuriositiesSection: React.FC = () => {
             id="curiosities-heading"
             className="font-editorial text-3xl sm:text-5xl xl:text-[56px] font-normal leading-[1.08] tracking-[-0.02em] text-[#f5f5f7]"
           >
-            O que poucos sabem sobre a{' '}
+            Fatos e dados sobre a{' '}
             <span className="text-[#edea35]">energia nuclear</span>
           </h2>
           <p className="mt-5 text-base sm:text-lg xl:text-[20px] font-light leading-[1.5] text-[#bebec4]">
-            Fatos científicos verificados, comparações de escala e a presença da tecnologia
-            nuclear no Brasil e no cotidiano com referências para consulta.
+            Equivalências físicas, funcionamento de torres de resfriamento e o uso
+            de radioisótopos na medicina e na exploração espacial.
           </p>
         </RevealOnScroll>
 

@@ -68,148 +68,143 @@ export interface FaqItem {
   sourceUrl: string;
 }
 
-export interface TeamMember {
-  name: string;
-  role: string;
-}
-
 export const HOW_IT_WORKS_STEPS: FissionStep[] = [
   {
     number: '01',
     badge: 'Núcleo Atômico',
-    title: 'A Fissão do Urânio-235',
+    title: 'A fissão do Urânio-235',
     description:
-      'Um nêutron em velocidade controlada atinge o núcleo de um átomo pesado de Urânio-235, tornando-o instável e dividindo-o em dois núcleos menores.',
+      'Um nêutron lento atinge o núcleo de um átomo de urânio-235. O átomo fica instável e se divide em dois núcleos menores, liberando calor imediato e novos nêutrons.',
     metricLabel: 'Energia por fissão',
     metricValue: '200 MeV',
     details: [
-      'Liberação instantânea de calor e 2 a 3 novos nêutrons livres',
-      'Reação em cadeia controlada por barras absorvedoras de nêutrons',
-      'Urânio enriquecido a apenas 3%–5% para uso civil em usinas',
+      'Gera calor e libera de 2 a 3 nêutrons livres',
+      'Barras de controle absorvem nêutrons para regular o ritmo da reação',
+      'Usinas civis usam urânio enriquecido entre 3% e 5%',
     ],
-    sourceLabel: 'IAEA - Nuclear Basics',
+    sourceLabel: 'IAEA — Reatores de Potência',
     sourceUrl: 'https://www.iaea.org/topics/nuclear-power-reactors',
   },
   {
     number: '02',
-    badge: 'Ciclo Termodinâmico',
-    title: 'Calor, Vapor e Pressão',
+    badge: 'Ciclo Térmico',
+    title: 'Calor, vapor e pressão',
     description:
-      'O calor intenso liberado no vaso do reator aquece a água do circuito primário sob alta pressão, transferindo energia térmica para o gerador de vapor sem contato direto.',
+      'A água do circuito primário retira calor do núcleo sob alta pressão, sem ferver. Em seguida, transfere esse calor para um circuito secundário de água pura, gerando vapor.',
     metricLabel: 'Temperatura no circuito',
     metricValue: '~320 °C',
     details: [
-      'Circuitos independentes e selados impedem vazamento radioativo',
-      'Água do circuito secundário transforma-se em vapor de alta pressão',
-      'A fumaça branca das torres é apenas vapor de água limpa resfriada',
+      'Circuitos isolados evitam que a água radioativa saia do reator',
+      'O vapor sob pressão movimenta o conjunto de turbinas',
+      'As torres externas liberam condensação de água limpa',
     ],
-    sourceLabel: 'Eletronuclear - Ciclo PWR Angra',
+    sourceLabel: 'Eletronuclear — Operação de Angra',
     sourceUrl: 'https://www.eletronuclear.gov.br',
   },
   {
     number: '03',
     badge: 'Geração Contínua',
-    title: 'Turbinas e Eletricidade de Base',
+    title: 'Turbinas e geração elétrica',
     description:
-      'O vapor aciona turbinas conectadas a um gerador elétrico, produzindo energia limpa 24 horas por dia, independentemente de sol, vento ou chuvas.',
+      'O vapor em expansão gira as pás da turbina, que aciona o gerador elétrico. A usina entrega energia firme à rede de forma contínua.',
     metricLabel: 'Fator de capacidade',
     metricValue: '92,5%',
     details: [
-      'Operação ininterrupta por 12 a 18 meses entre recargas',
-      'Zero emissão de gases de efeito estufa durante a geração',
-      'Estabilidade crítica para hospitais, indústrias e grandes centros',
+      'Reatores operam entre 12 e 18 meses seguidos entre recargas de combustível',
+      'A geração elétrica não emite dióxido de carbono nem fuligem',
+      'Mantém a estabilidade da rede sem depender de chuva, vento ou sol',
     ],
-    sourceLabel: 'U.S. EIA - Electric Power Monthly',
+    sourceLabel: 'U.S. EIA — Electric Power Monthly',
     sourceUrl: 'https://www.eia.gov/electricity/monthly/',
   },
 ];
 
 export const DEBATE_PROS: DebatePoint[] = [
   {
-    title: 'Altíssima Densidade Energética',
+    title: 'Alta densidade energética',
     description:
-      'Uma única pastilha de combustível de urânio do tamanho da ponta de um dedo gera a mesma eletricidade que 1 tonelada de carvão mineral ou 3 barris de petróleo.',
+      'Uma pastilha de dióxido de urânio de 10 gramas gera a mesma quantidade de eletricidade que uma tonelada de carvão mineral.',
     stat: '10 g = 1 t',
-    statLabel: 'Pastilha de U-235 vs. Carvão',
-    sourceLabel: 'World Nuclear Association (WNA)',
+    statLabel: 'Pastilha de UO₂ versus carvão mineral',
+    sourceLabel: 'World Nuclear Association',
     sourceUrl: 'https://world-nuclear.org/information-library/nuclear-fuel-cycle/introduction/nuclear-fuel-cycle-overview',
   },
   {
-    title: 'Aliada da Descarbonização',
+    title: 'Baixa emissão de gases estufa',
     description:
-      'Ao longo de todo o ciclo de vida, a energia nuclear emite cerca de 12 gCO₂ por kWh gerado — patamar similar ao da energia eólica e significativamente inferior ao de fontes fósseis.',
+      'No cálculo de ciclo de vida completo (construção, mineração e operação), a usina nuclear emite cerca de 12 gramas de CO₂ por quilowatt-hora, taxa comparável à eólica.',
     stat: '12 gCO₂',
-    statLabel: 'Emissão média por kWh gerado',
-    sourceLabel: 'IPCC AR6 WGIII - Lifecycle Emissions',
+    statLabel: 'Emissões médias por kWh gerado',
+    sourceLabel: 'IPCC AR6 WGIII',
     sourceUrl: 'https://www.ipcc.ch/report/ar6/wg3/',
   },
   {
-    title: 'Confiabilidade e Segurança de Rede',
+    title: 'Geração contínua sem intermitência',
     description:
-      'Diferente de fontes intermitentes climáticas, reatores nucleares operam como carga de base (baseload) com disponibilidade superior a 90% do ano ininterruptamente.',
-    stat: '24/7',
-    statLabel: 'Geração contínua sem intermitência',
-    sourceLabel: 'IAEA PRIS - Reactor Performance',
+      'Reatores nucleares funcionam como carga de base do sistema elétrico, mantendo disponibilidade média acima de 90% ao longo do ano.',
+    stat: '90%+',
+    statLabel: 'Fator de disponibilidade operacional',
+    sourceLabel: 'IAEA PRIS',
     sourceUrl: 'https://pris.iaea.org/PRIS/home.aspx',
   },
 ];
 
 export const DEBATE_CONS: DebatePoint[] = [
   {
-    title: 'Gestão de Resíduos Radioativos',
+    title: 'Armazenamento de rejeitos',
     description:
-      'O combustível usado de alto nível exige resfriamento inicial em piscinas blindadas e contenção geológica estável por milhares de anos até declínio da radiotoxidade.',
-    stat: '10.000+',
-    statLabel: 'Anos de isolamento seguro requerido',
-    sourceLabel: 'Posiva Oy - Depósito Geológico Onkalo',
+      'O combustível usado contém elementos radioativos de vida longa que exigem isolamento seguro em formações geológicas estáveis por milhares de anos.',
+    stat: '10.000+ anos',
+    statLabel: 'Período de decaimento do combustível usado',
+    sourceLabel: 'Posiva Oy (Repositório Onkalo)',
     sourceUrl: 'https://www.posiva.fi/en/',
   },
   {
-    title: 'Acidentes de Alto Impacto',
+    title: 'Severidade de acidentes graves',
     description:
-      'Embora eventos catastróficos sejam raros na história da geração comercial (Chernobyl 1986 e Fukushima 2011), suas consequências provocam evacuações e alto impacto socioeconômico.',
+      'Embora falhas catastróficas sejam raras na história da indústria, acidentes de nível 7 na escala INES causam evacuações prolongadas e contaminação de áreas vizinhas.',
     stat: 'Nível 7',
-    statLabel: 'Escala Internacional INES (IAEA)',
-    sourceLabel: 'IAEA - International Nuclear Event Scale',
+    statLabel: 'Classificação máxima na escala INES',
+    sourceLabel: 'IAEA — Escala INES',
     sourceUrl: 'https://www.iaea.org/resources/databases/ines',
   },
   {
-    title: 'Custos e Tempo de Construção',
+    title: 'Custos e prazos de obra',
     description:
-      'Altas exigências de segurança e barreiras de contenção redundantes demandam aportes de bilhões de dólares e cronogramas de construção de 7 a 12 anos por usina.',
-    stat: 'US$ 6–9 bi',
-    statLabel: 'Investimento inicial médio por reator',
-    sourceLabel: 'Agência Internacional de Energia (IEA)',
+      'O licenciamento rigoroso e os múltiplos sistemas redundantes de contenção elevam o custo de capital e estendem as obras por 7 a 12 anos por reator.',
+    stat: 'US$ 6 a 9 bi',
+    statLabel: 'Custo inicial médio por reator de grande porte',
+    sourceLabel: 'IEA — Relatório de Transição',
     sourceUrl: 'https://www.iea.org/reports/nuclear-power-and-secure-energy-transitions',
   },
 ];
 
 export const DEBATE_CONTROVERSIES: DebatePoint[] = [
   {
-    title: 'Proliferação Nuclear vs. Uso Civil',
+    title: 'Uso civil versus proliferação',
     description:
-      'A fronteira tecnológica entre enriquecimento de urânio para reatores civis (3% a 5%) e enriquecimento armamentista (acima de 90%) exige vigilância e salvaguardas internacionais rigorosas.',
-    stat: '3% vs 90%',
-    statLabel: 'Grau de enriquecimento civil vs. militar',
-    sourceLabel: 'Tratado de Não Proliferação (TNP / ONU)',
+      'O domínio do enriquecimento isotópico exige fiscalização internacional permanente pela AIEA para garantir que o combustível permaneça na faixa civil de até 5%, distante dos 90% usados em ogivas.',
+    stat: '3% a 5%',
+    statLabel: 'Enriquecimento civil para usinas comerciais',
+    sourceLabel: 'ONU — Tratado de Não Proliferação',
     sourceUrl: 'https://www.un.org/disarmament/wmd/nuclear/npt/',
   },
   {
-    title: 'Taxonomia Verde e Transição Energética',
+    title: 'Classificação na transição energética',
     description:
-      'Governos e blocos econômicos debatem intensamente se a energia nuclear deve receber financiamentos e incentivos sustentáveis de energia limpa (como na Taxonomia da União Europeia).',
-    stat: 'UE Taxonomia',
-    statLabel: 'Classificação como energia de transição',
-    sourceLabel: 'Comissão Europeia - EU Taxonomy Complementary Delegated Act',
+      'Governos divergem sobre incluir reatores em programas de financiamento sustentável. A União Europeia incluiu a fonte em sua taxonomia verde com exigências técnicas sobre gestão de rejeitos.',
+    stat: 'Taxonomia UE',
+    statLabel: 'Inclusão sob critérios técnicos e ambientais',
+    sourceLabel: 'Comissão Europeia',
     sourceUrl: 'https://finance.ec.europa.eu/sustainable-finance/tools-and-standards/eu-taxonomy-sustainable-activities_en',
   },
   {
-    title: 'Retirada de Operação (Decommissioning)',
+    title: 'Descomissionamento de instalações',
     description:
-      'O descomissionamento de usinas após 40 a 60 anos de atividade envolve logística de alta complexidade, desmontagem radiológica e orçamento bilionário previsto em fundos garantidores.',
+      'Ao final da vida útil de 40 a 60 anos, desmontar o reator e descontaminar o terreno exige planejamento de longo prazo e fundos financeiros provisionados desde o início da operação.',
     stat: '40 a 60 anos',
-    statLabel: 'Vida útil média antes do descomissionamento',
-    sourceLabel: 'World Nuclear Association - Decommissioning',
+    statLabel: 'Período operacional até a desativação',
+    sourceLabel: 'World Nuclear Association',
     sourceUrl: 'https://world-nuclear.org/information-library/nuclear-fuel-cycle/nuclear-wastes/decommissioning-nuclear-facilities',
   },
 ];
@@ -227,8 +222,8 @@ export const ENERGY_COMPARISON: EnergySourceComparison[] = [
     source: 'Eólica',
     co2GramsPerKwh: 11,
     capacityFactorPercent: 35,
-    sourceLabel: 'IPCC WGIII / NREL',
-    sourceUrl: 'https://www.nrel.gov/analysis/life-cycle-assessment.html',
+    sourceLabel: 'NREL LCA Harmonization',
+    sourceUrl: 'https://www.nrel.gov',
   },
   {
     source: 'Hidrelétrica',
@@ -241,8 +236,8 @@ export const ENERGY_COMPARISON: EnergySourceComparison[] = [
     source: 'Solar Fotovoltaica',
     co2GramsPerKwh: 45,
     capacityFactorPercent: 25,
-    sourceLabel: 'IPCC WGIII / NREL',
-    sourceUrl: 'https://www.nrel.gov/analysis/life-cycle-assessment.html',
+    sourceLabel: 'NREL LCA Harmonization',
+    sourceUrl: 'https://www.nrel.gov',
   },
   {
     source: 'Gás Natural',
@@ -255,72 +250,72 @@ export const ENERGY_COMPARISON: EnergySourceComparison[] = [
     source: 'Carvão Mineral',
     co2GramsPerKwh: 820,
     capacityFactorPercent: 54,
-    sourceLabel: 'IPCC WGIII / IEA',
-    sourceUrl: 'https://www.iea.org/reports/emissions-factors-2023',
+    sourceLabel: 'IPCC WGIII & IEA',
+    sourceUrl: 'https://www.iea.org',
   },
 ];
 
 export const CURIOSITIES_ITEMS: CuriosityItem[] = [
   {
     id: 'pellet',
-    eyebrow: 'EQUIVALÊNCIA ENERGÉTICA',
-    title: 'O poder concentrado em uma pastilha de',
+    eyebrow: 'DENSIDADE ENERGÉTICA',
+    title: 'O conteúdo de uma pastilha de',
     highlightWord: '10 gramas',
     description:
-      'Uma única pastilha cilíndrica de dióxido de urânio (UO₂) com cerca de 1 cm de altura produz a mesma energia que 1 tonelada de carvão mineral, 480 m³ de gás natural ou 3 barris de petróleo bruto.',
+      'Uma pastilha cerâmica de urânio do tamanho da ponta de um dedo rende a mesma quantidade de energia térmica que 1.000 quilos de carvão ou 480 metros cúbicos de gás natural.',
     bigStat: '1 : 100.000',
-    bigStatUnit: 'Proporção de densidade de combustível (Urânio vs. Fósseis)',
+    bigStatUnit: 'Proporção de consumo em massa versus combustíveis fósseis',
     span: 'wide',
-    sourceLabel: 'World Nuclear Association (Fuel Comparison)',
+    sourceLabel: 'World Nuclear Association',
     sourceUrl: 'https://world-nuclear.org/information-library/nuclear-fuel-cycle/introduction/nuclear-fuel-cycle-overview',
   },
   {
     id: 'cooling-towers',
-    eyebrow: 'MITO POPULAR',
-    title: 'As torres expelem apenas',
-    highlightWord: 'vapor d’água',
+    eyebrow: 'SISTEMA DE RESFRIAMENTO',
+    title: 'O vapor visível nas torres de',
+    highlightWord: 'resfriamento',
     description:
-      'Aquela imensa pluma branca expelida pelas icônicas torres hiperbólicas não possui radiação nem poluentes: é 100% vapor de água pura proveniente do circuito terciário de resfriamento.',
-    bigStat: '100% H₂O',
-    bigStatUnit: 'Zero fumaça ou gases de efeito estufa emitidos',
+      'A pluma branca que sai das torres externas é apenas condensação de vapor de água comum. O circuito de resfriamento não entra em contato com o material do reator.',
+    bigStat: '100% água',
+    bigStatUnit: 'Condensação de água pura sem fuligem',
     span: 'narrow',
-    sourceLabel: 'U.S. NRC - Cooling Towers Information',
-    sourceUrl: 'https://www.nrc.gov/reading-rm/basic-ref/glossary/cooling-tower.html',
+    sourceLabel: 'U.S. NRC — Glossário de Reatores',
+    sourceUrl: 'https://www.nrc.gov',
   },
   {
     id: 'brazil-angra',
-    eyebrow: 'CENÁRIO BRASILEIRO',
-    title: 'O Brasil domina o ciclo completo do',
-    highlightWord: 'combustível',
+    eyebrow: 'OPERAÇÃO NACIONAL',
+    title: 'A matriz nuclear no',
+    highlightWord: 'Brasil',
     description:
-      'Com a 7ª maior reserva geológica de urânio do planeta, o Brasil opera Angra 1 e Angra 2 (gerando cerca de 3% da eletricidade do país e 40% de todo o consumo do Rio de Janeiro) através da tecnologia de enriquecimento nacional das INB.',
+      'O país tem jazidas próprias de urânio e opera Angra 1 e Angra 2 no litoral do Rio de Janeiro. As duas usinas respondem por cerca de 2% a 3% do consumo elétrico nacional e por mais de um terço da energia do estado fluminense.',
     span: 'half',
-    sourceLabel: 'Indústrias Nucleares do Brasil (INB) & Eletronuclear',
-    sourceUrl: 'https://www.inb.gov.br',
+    sourceLabel: 'Eletronuclear & INB',
+    sourceUrl: 'https://www.eletronuclear.gov.br',
   },
   {
     id: 'medicine-space',
-    eyebrow: 'ALÉM DA ELETRICIDADE',
-    title: 'Medicina nuclear e exploração do',
-    highlightWord: 'espaço profundo',
+    eyebrow: 'OUTRAS APLICAÇÕES',
+    title: 'Medicina diagnóstica e sondas',
+    highlightWord: 'espaciais',
     description:
-      'Radioisótopos (como o Molibdênio-99 / Tecnécio-99m) viabilizam dezenas de milhões de exames diagnósticos e tratamentos contra o câncer por ano. No espaço, geradores termoelétricos de radioisótopos (RTGs) alimentam a sonda Voyager e o rover Perseverance em Marte há anos.',
+      'Reatores de pesquisa produzem radioisótopos hospitalares como o tecnécio-99m, usado em cintilografias e tratamentos oncológicos. No espaço, geradores termoelétricos de radioisótopos (RTGs) alimentam o jipe Perseverance em Marte e a sonda Voyager.',
     span: 'half',
-    sourceLabel: 'NASA Jet Propulsion Laboratory & IAEA Human Health',
-    sourceUrl: 'https://science.nasa.gov/mission/mars-2020-perseverance/spacecraft/rover/power/',
+    sourceLabel: 'NASA — Mars 2020 Perseverance',
+    sourceUrl: 'https://science.nasa.gov/mission/mars-2020-perseverance',
   },
 ];
 
 export const MEDIA_RECOMMENDATIONS: MediaRecommendationItem[] = [
   {
     type: 'filme',
-    typeLabel: 'Filme Histórico',
+    typeLabel: 'Filme',
     title: 'Oppenheimer',
     year: '2023',
     authorOrDirector: 'Direção: Christopher Nolan',
     description:
-      'Vencedor de 7 Oscars, retrata o Projeto Manhattan em Los Alamos e as complexas implicações morais, políticas e científicas do nascimento da era atômica liderada por J. Robert Oppenheimer.',
-    sourceLabel: 'Universal Pictures / IMDb',
+      'O longa acompanha o Projeto Manhattan durante a Segunda Guerra Mundial e mostra os debates técnicos e éticos dos cientistas envolvidos na criação das primeiras armas atômicas.',
+    sourceLabel: 'IMDb',
     sourceUrl: 'https://www.imdb.com/title/tt15398776/',
   },
   {
@@ -330,41 +325,41 @@ export const MEDIA_RECOMMENDATIONS: MediaRecommendationItem[] = [
     year: '2022',
     authorOrDirector: 'Direção: Oliver Stone',
     description:
-      'Baseado no livro "A Bright Future", o documentário investiga como a energia nuclear civil pode ser uma das principais soluções tecnológicas para enfrentar a crise climática global e descarbonizar a matriz mundial.',
-    sourceLabel: 'Nuclear Now Documentary / Abramorama',
+      'O documentário entrevista físicos e engenheiros sobre o histórico da indústria nuclear civil e defende a tecnologia como fonte de energia firme para descarbonizar a matriz elétrica.',
+    sourceLabel: 'Site Oficial do Filme',
     sourceUrl: 'https://www.nuclearnowfilm.com/',
   },
   {
     type: 'documentario',
-    typeLabel: 'Minissérie / Docudrama',
+    typeLabel: 'Minissérie',
     title: 'Chernobyl',
     year: '2019',
-    authorOrDirector: 'Criado por Craig Mazin (HBO)',
+    authorOrDirector: 'Criação: Craig Mazin (HBO)',
     description:
-      'Aclamada minissérie dramática que reconstitui minuciosamente a sequência de falhas humanas e de projeto no reator RBMK soviético em 1986, ressaltando os custos da negligência e da desinformação.',
-    sourceLabel: 'HBO Originals / IMDb',
+      'A minissérie dramatiza as horas que antecederam e sucederam a explosão do reator 4 em 1986, reconstituindo as falhas de projeto do reator RBMK soviético e os erros de comando na sala de controle.',
+    sourceLabel: 'IMDb',
     sourceUrl: 'https://www.imdb.com/title/tt8462700/',
   },
   {
     type: 'livro',
-    typeLabel: 'Livro & Ensaio Científico',
+    typeLabel: 'Livro',
     title: 'Como Evitar um Desastre Climático',
     year: '2021',
-    authorOrDirector: 'Autor: Bill Gates (Ed. Companhia das Letras)',
+    authorOrDirector: 'Bill Gates',
     description:
-      'Nesta análise abrangente sobre a corrida rumo às emissões líquidas zero, o autor discute por que reatores nucleares avançados de próxima geração (SMRs / Terrapower) são essenciais para suprir eletricidade confiável e descarbonizada.',
-    sourceLabel: 'GatesNotes / Penguin Random House',
-    sourceUrl: 'https://www.gatesnotes.com/How-to-Avoid-a-Climate-Disaster',
+      'O autor analisa os números da emissão global por setor econômico e argumenta que reatores nucleares de nova geração são necessários para complementar redes com fontes renováveis variáveis.',
+    sourceLabel: 'GatesNotes',
+    sourceUrl: 'https://www.gatesnotes.com',
   },
   {
     type: 'livro',
-    typeLabel: 'Livro Clássico',
+    typeLabel: 'Livro',
     title: 'Vozes de Tchernóbil: A História Oral do Desastre',
     year: '1997',
-    authorOrDirector: 'Autora: Svetlana Aleksiévitch (Prêmio Nobel de Literatura)',
+    authorOrDirector: 'Svetlana Aleksiévitch',
     description:
-      'Monumento literário que reúne centenas de relatos comoventes de bombeiros, médicos, cientistas, liquidadores e civis que enfrentaram em primeira pessoa as consequências humanas do acidente nuclear de 1986.',
-    sourceLabel: 'Nobel Prize in Literature / Companhia das Letras',
+      'A jornalista bielorrussa reuniu depoimentos de moradores, bombeiros, viúvas e militares convocados para conter a radiação em 1986, registrando as perdas humanas provocadas pelo acidente.',
+    sourceLabel: 'Comitê do Prêmio Nobel',
     sourceUrl: 'https://www.nobelprize.org/prizes/literature/2015/alexievich/facts/',
   },
   {
@@ -374,47 +369,47 @@ export const MEDIA_RECOMMENDATIONS: MediaRecommendationItem[] = [
     year: '2013',
     authorOrDirector: 'Direção: Robert Stone',
     description:
-      'Apresenta o depoimento de ambientalistas e historiadores que antes eram contrários à energia nuclear e mudaram de posicionamento após analisarem dados de mortalidade comparada e aquecimento global.',
-    sourceLabel: 'Impact Partners / CNN Films',
+      'O filme reúne ambientalistas que revisaram suas posições sobre energia atômica após compararem as estatísticas de poluição atmosférica fóssil com dados de segurança operacional.',
+    sourceLabel: 'IMDb',
     sourceUrl: 'https://www.imdb.com/title/tt1992193/',
   },
 ];
 
 export const REFERENCES_LIST: ReferenceItem[] = [
   {
-    category: 'Relatório Internacional',
+    category: 'Relatório Técnico',
     organization: 'IAEA — Agência Internacional de Energia Atômica',
     title: 'Nuclear Power and the Clean Energy Transition',
     year: '2024',
     summary:
-      'Dados oficiais sobre os mais de 410 reatores em operação comercial no mundo, padrões de segurança radiológica, novos reatores modulares pequenos (SMRs) e metas de transição energética.',
+      'Publicação com dados consolidados dos mais de 400 reatores comerciais em operação, procedimentos de segurança e estimativas de demanda energética.',
     url: 'https://www.iaea.org',
   },
   {
-    category: 'Clima & Emissões',
+    category: 'Estudo Climático',
     organization: 'IPCC — Painel Intergovernamental sobre Mudanças Climáticas',
     title: 'AR6 Working Group III: Mitigation of Climate Change',
     year: '2023',
     summary:
-      'Avaliação comparativa rigorosa das emissões de gases de efeito estufa no ciclo de vida (gCO₂eq/kWh) de todas as matrizes elétricas mundiais.',
+      'Compilação de inventários de ciclo de vida que calculam as emissões médias de gases de efeito estufa por quilowatt-hora gerado entre as diferentes fontes.',
     url: 'https://www.ipcc.ch',
   },
   {
-    category: 'Matriz Brasileira',
-    organization: 'Eletronuclear & INB (Indústrias Nucleares do Brasil)',
-    title: 'Panorama da Central Nuclear Almirante Álvaro Alberto (CNAAA)',
+    category: 'Dados Nacionais',
+    organization: 'Eletronuclear & INB',
+    title: 'Relatório Operacional da Central de Angra',
     year: '2024',
     summary:
-      'Dados de despacho elétrico de Angra 1 e 2, monitoramento ambiental da baía de Ilha Grande, projeto de Angra 3 e tecnologia ultracentrífuga nacional.',
+      'Informações públicas sobre a geração de Angra 1 e Angra 2, monitoramento radiológico do entorno e mineração de urânio em Caetité.',
     url: 'https://www.eletronuclear.gov.br',
   },
   {
-    category: 'Segurança & Estatística',
+    category: 'Estatística Comparada',
     organization: 'Our World in Data / Oxford Martin School',
     title: 'What are the safest and cleanest sources of energy?',
     year: '2024',
     summary:
-      'Meta-análise comparando taxas de mortes atribuíveis à poluição do ar e acidentes industriais por TWh gerado entre fontes fósseis, renováveis e nuclear.',
+      'Estudo que compara mortalidade humana decorrente da poluição do ar e de acidentes de trabalho por terawatt-hora produzido no setor elétrico.',
     url: 'https://ourworldindata.org/safest-sources-of-energy',
   },
 ];
@@ -423,22 +418,22 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Uma usina nuclear pode explodir como uma bomba atômica?',
     answer:
-      'Não. É fisicamente impossível. Bombas atômicas utilizam Urânio-235 ou Plutônio com pureza superior a 90% em mecanismo de compressão imediata. Reatores comerciais empregam urânio enriquecido em apenas 3% a 5%, diluído em pastilhas cerâmicas termorresistentes.',
-    sourceLabel: 'World Nuclear Association (Safety of Nuclear Power)',
-    sourceUrl: 'https://world-nuclear.org/information-library/safety-and-security/safety-of-plants/safety-of-nuclear-power-reactors',
+      'Não. O combustível das usinas tem urânio enriquecido entre 3% e 5%, enquanto ogivas nucleares exigem urânio ou plutônio enriquecido acima de 90%, além de um mecanismo de compressão explosiva rápida. A física do combustível civil não permite uma detonação atômica.',
+    sourceLabel: 'World Nuclear Association',
+    sourceUrl: 'https://world-nuclear.org',
   },
   {
-    question: 'O que é feito com o lixo atômico das usinas elétricas?',
+    question: 'Onde fica o lixo atômico produzido pelas usinas?',
     answer:
-      'Diferente das termelétricas que dispersam gases e cinzas na atmosfera, 100% dos resíduos sólidos de usinas nucleares são retidos, blindados e catalogados. Após resfriamento em piscinas seladas, são acondicionados em cilindros de aço-concreto (dry casks) ou encaminhados para repositórios geológicos profundos, como o depósito Onkalo na Finlândia.',
-    sourceLabel: 'Posiva Finland & IAEA Radioactive Waste Management',
-    sourceUrl: 'https://www.iaea.org/topics/radioactive-waste-management',
+      'Ao contrário de usinas fósseis, todo o resíduo do reator é sólido e mantido em contenção física. As varetas usadas passam primeiro por piscinas de resfriamento com blindagem hídrica por alguns anos e depois são transferidas para silos de aço e concreto (armazéns a seco) ou repositórios geológicos profundos.',
+    sourceLabel: 'Posiva & IAEA',
+    sourceUrl: 'https://www.posiva.fi/en/',
   },
   {
-    question: 'Qual a diferença científica entre fissão nuclear e fusão nuclear?',
+    question: 'Qual a diferença entre fissão e fusão nuclear?',
     answer:
-      'A fissão (tecnologia das usinas em operação hoje) consiste na quebra de núcleos atômicos pesados (Urânio-235). A fusão nuclear (processo que gera a energia do Sol e alvo de projetos de pesquisa internacionais como o ITER) realiza a junção de núcleos leves de hidrogênio (deutério e trítio), sem gerar resíduos de alta radioatividade.',
-    sourceLabel: 'ITER Project Organization',
+      'A fissão é o processo empregado nas usinas comerciais atuais, no qual núcleos pesados de urânio são partidos ao meio. A fusão é a reação que ocorre no Sol, na qual núcleos leves de hidrogênio se unem para formar hélio. A fusão ainda está em fase de pesquisa em instalações experimentais como o reator ITER.',
+    sourceLabel: 'Consórcio ITER',
     sourceUrl: 'https://www.iter.org',
   },
 ];
